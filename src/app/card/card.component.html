@@ -1,12 +1,16 @@
 <div class=container>
   <div class="card">
-    <h2>Card component hello world with {{title}} {{number + 1}}!</h2>
+    <h2>{{title}}</h2>
     <p>{{text}}</p>
     <pre>{{obj | json}}</pre>
     <p>{{getInfo()}}</p>
+    <div class="buttons">
+      <button (click)="changeTitle()">Change title</button>
+      <button (click)="title='Inline title'">Change title inline</button>
+    </div>
+
     <div>
-      <img [src]="imgUrl">
-      <button [disabled]="disabled">Enable</button>
+      <input type="text" (input)="inputHandler($event)" [value]='title'>
     </div>
   </div>
 </div>

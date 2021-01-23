@@ -20,9 +20,14 @@ export class CardComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.disabled = true;
-      this.imgUrl = 'https://ensocore.com/media/61/reactjs-logo-sticker%20%281%29.jpg';
-    }, 3000);
+  }
+
+  changeTitle(): void {
+      this.title = 'New title';
+  }
+
+  inputHandler(event: any): void {
+    const value = event.target.value;
+    this.title = value;
   }
 }
