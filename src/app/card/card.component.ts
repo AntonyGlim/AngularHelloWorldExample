@@ -26,8 +26,7 @@ export class CardComponent implements OnInit{
       this.title = 'New title';
   }
 
-  inputHandler(event: any): void {
-    const value = event.target.value;
+  inputHandler(value: string): void {
     this.title = value;
   }
 }
