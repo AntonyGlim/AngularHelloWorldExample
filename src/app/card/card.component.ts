@@ -29,4 +29,8 @@ export class CardComponent implements OnInit{
   inputHandler(value: string): void {
     this.title = value;
   }
+
+  changeHandler(): void {
+    console.log(this.title);
+  }
 }
