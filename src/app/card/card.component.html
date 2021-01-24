@@ -5,11 +5,19 @@
       fontWeight: title.length < 5 ? 'normal' : 'bold'
     }">{{title}}</h2>
 
-    <p class="text" [ngClass]="{
-      red: textColor === 'red',
-      blue: textColor === 'blue',
-      green: textColor === 'green'
-    }">{{text}}</p>
+    <!--    <p class="text" [ngClass]="{-->
+    <!--      red: textColor === 'red',-->
+    <!--      blue: textColor === 'blue',-->
+    <!--      green: textColor === 'green'-->
+    <!--    }">{{text}}</p>-->
+
+    <p class="text"
+       [class.red]="textColor === 'red'"
+       [class.blue]="textColor === 'blue'"
+       [class.green]="textColor === 'green'"
+    >
+      {{text}}
+    </p>
 
     <pre>{{obj | json}}</pre>
     <p>{{getInfo()}}</p>
