@@ -4,11 +4,13 @@
   <hr>
   <button (click)="toggleCards()">Toggle cards</button>
   <hr>
+
   <div *ngIf="toggle; else noCards">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-form></app-form>
+    <app-card
+      *ngFor="let cardIterator of cards; let idx = index"
+      [card]="cardIterator"
+      [index]="idx + 1"
+    ></app-card>
   </div>
 
   <ng-template #noCards>

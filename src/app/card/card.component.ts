@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Card} from '../app.component';
 
 @Component({
   selector: 'app-card',
@@ -6,14 +7,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit{
+
+  @Input() card: Card;
+  @Input() index: number;
   title = 'My title';
   text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda enim est nihil possimus,' +
     'praesentium quaerat quis repellendus saepe ut. Aut dolorum earum eveniet fugit illum magnam omnis possimus, quas.';
 
-  number = 1;
-  obj = {name: 'Victor', birthday: {year: 1990, month: 12, day: 21}};
-  imgUrl = 'https://blog.ninja-squad.com/assets/images/angular.png';
-  disabled = false;
   textColor = 'black';
 
   getInfo(): string {
@@ -24,7 +24,7 @@ export class CardComponent implements OnInit{
   }
 
   changeTitle(): void {
-      this.title = 'New title';
+      this.card.title = 'New title';
   }
 
   inputHandler(value: string): void {

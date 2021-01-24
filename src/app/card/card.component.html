@@ -1,9 +1,10 @@
 <div class=container>
   <div class="card">
     <h2 [ngStyle]="{
-      color: title.length < 5 ? 'red' : 'green',
-      fontWeight: title.length < 5 ? 'normal' : 'bold'
-    }">{{title}}</h2>
+      color: card.title.length < 5 ? 'red' : 'green',
+      fontWeight: card.title.length < 5 ? 'normal' : 'bold'
+    }"
+    >{{index}}. {{card.title}}</h2>
 
     <!--    <p class="text" [ngClass]="{-->
     <!--      red: textColor === 'red',-->
@@ -16,10 +17,9 @@
        [class.blue]="textColor === 'blue'"
        [class.green]="textColor === 'green'"
     >
-      {{text}}
+      {{card.text}}
     </p>
 
-    <pre>{{obj | json}}</pre>
     <p>{{getInfo()}}</p>
 
     <div class="buttons">
@@ -30,11 +30,11 @@
 
     <div class="buttons">
       <button (click)="changeTitle()">Change title</button>
-      <button (click)="title='Inline title'">Change title inline</button>
+      <button (click)="card.title='Inline title'">Change title inline</button>
     </div>
 
     <div>
-      <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()">
+      <input type="text" [(ngModel)]="card.title" (ngModelChange)="changeHandler()">
     </div>
   </div>
 </div>
