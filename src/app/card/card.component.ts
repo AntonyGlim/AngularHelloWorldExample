@@ -14,6 +14,7 @@ export class CardComponent implements OnInit{
   obj = {name: 'Victor', birthday: {year: 1990, month: 12, day: 21}};
   imgUrl = 'https://blog.ninja-squad.com/assets/images/angular.png';
   disabled = false;
+  textColor = 'black';
 
   getInfo(): string {
     return 'This is my info';

@@ -1,9 +1,25 @@
 <div class=container>
   <div class="card">
-    <h2>{{title}}</h2>
-    <p>{{text}}</p>
+    <h2 [ngStyle]="{
+      color: title.length < 5 ? 'red' : 'green',
+      fontWeight: title.length < 5 ? 'normal' : 'bold'
+    }">{{title}}</h2>
+
+    <p class="text" [ngClass]="{
+      red: textColor === 'red',
+      blue: textColor === 'blue',
+      green: textColor === 'green'
+    }">{{text}}</p>
+
     <pre>{{obj | json}}</pre>
     <p>{{getInfo()}}</p>
+
+    <div class="buttons">
+      <button (click)="textColor = 'red'">red</button>
+      <button (click)="textColor = 'blue'">blue</button>
+      <button (click)="textColor = 'green'">green</button>
+    </div>
+
     <div class="buttons">
       <button (click)="changeTitle()">Change title</button>
       <button (click)="title='Inline title'">Change title inline</button>
