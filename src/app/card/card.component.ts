@@ -15,6 +15,7 @@ export class CardComponent implements OnInit{
     'praesentium quaerat quis repellendus saepe ut. Aut dolorum earum eveniet fugit illum magnam omnis possimus, quas.';
 
   textColor = 'black';
+  cardDate: Date = new Date();
 
   getInfo(): string {
     return 'This is my info';
