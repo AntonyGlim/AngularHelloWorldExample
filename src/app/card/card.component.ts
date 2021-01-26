@@ -8,8 +8,8 @@ import {Card} from '../app.component';
 })
 export class CardComponent implements OnInit{
 
-  @Input() card: Card;
-  @Input() index: number;
+  @Input() card: Card = {title: 'Card 0', text: 'Card number 0'};
+  @Input() index = 0;
   title = 'My title';
   text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda enim est nihil possimus,' +
     'praesentium quaerat quis repellendus saepe ut. Aut dolorum earum eveniet fugit illum magnam omnis possimus, quas.';
